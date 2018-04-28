@@ -4,8 +4,8 @@
 #week 3: create boundaries detection and draw borders, initial listening of keyboard
 #week 4: defined collision if turtle hits boundaries. Created github repository. Created missile class
 #week 4 cont: having hard time with user detecting collision with missile class.
-
-
+#week 5: Recreated missile class to be more functionable
+#week 6: game class created, missile collision
 
 import random
 import turtle
@@ -60,6 +60,14 @@ def move(self):
 			self.sety(-500)
 			self.rt(60)
 
+class Game():
+	def __init__(self):
+		self.level = 1
+		self.score = 0
+		self.state = "playing"
+		self.pen = turtle.Turtle()
+		self.lives = 3
+
 def draw_border(self):
 		#Draw border
 		self.pen.speed(0)
@@ -75,9 +83,9 @@ def draw_border(self):
 		self.pen.ht()
 
 def is_collision(self, other):
-		if (self.xcor() >= (other.xcor() - 50)) and \
-		(self.xcor() <= (other.xcor() + 50)) and \
-		(self.ycor() >= (other.ycor() - 50)) and \
+		if (self.xcor() >= (other.xcor() - 50))
+		(self.xcor() <= (other.xcor() + 50))
+		(self.ycor() >= (other.ycor() - 50))
 		(self.ycor() <= (other.ycor() + 50)):
 			return True
 		else:
@@ -96,5 +104,16 @@ turtle.listen()
 #necessary game loop
 while True:
 	player.move()
+
+if Missile.is_collision(player):
+		x = random.randint(-250, 250)
+		y = random.randint(-250, 250)
+		ally.goto(x, y)
+		Missile.status = "ready"
+		#Decrease the score
+		game.score -= 50
+		game.show_status()
+
+
 
 
